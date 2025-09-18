@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="img/flowers.png" type="image/x-icon" />
+  <title>Flowers</title>
+</head>
+<body class="container">
+
+  <!-- Botón para reproducir música -->
+  <button id="playMusic" style="position: absolute; top: 10px; right: 10px; padding: 8px 12px; background: #fdd835; border: none; border-radius: 8px; cursor: pointer;">
+    🎵 Reproducir música
+  </button>
+
+  <!-- Música -->
+  <audio id="bg-music" loop>
+    <source src="sound/flowers.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <div class="greetings">
+      <span>H</span>
+      <span>o</span>
+      <span>l</span>
+      <span>a</span>
+      <span>!</span>
+  </div>
+
+  <div class="description">
+      <span>ESTE DETALLE ES PARA TI :)</span>
+  </div>
+
+  <div class="button">
+      <button class="botones">
+          <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
+      </button>
+  </div>
+
+  <!-- Script para el botón de música -->
+  <script>
+    const btn = document.getElementById("playMusic");
+    const music = document.getElementById("bg-music");
+
+    btn.addEventListener("click", () => {
+      music.play()
+        .then(() => btn.style.display = "none")
+        .catch(err => console.log("Error al reproducir:", err));
+    });
+  </script>
+</body>
+</html>
